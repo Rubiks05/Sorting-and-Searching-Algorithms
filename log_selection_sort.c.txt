@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int count_comparacoes;
+int count_trocas;
+
+long aleat (long min, long max) {
+
+        return min + rand() % (max - min + 1);
+
+}
+void cria_vector(int vector[], int copia_vector[]) {
+
+        for (int i=0 ; i<1024 ; i++) {
+                vector[i] = aleat(0,2048);
+                copia_vector[i] = vector[i];
+        }
+}
+void imprime_parte(int vector[]) {
+
+        for (int i=0 ; i<100 ; i++) printf("%d ", vector[i]);
+        printf("\n");
+}
+void troca(int *xp, int *yp) {
+
+        int temp = *xp;
+        *xp = *yp;
+        *yp = temp;
+}
+int selection_sort(int vetor[], int n) {
+
+        int i,j,min_indx;
+
+        for (i = 0 ; i < (n-1) ; i++) {
+
+                min_indx = i;
+                for (j = i+1 ; j < n ; j++) {
+                        count_comparacoes++;
+                        if (vetor[j] < vetor[min_indx]) min_indx = j;
+                }
+
+                troca(&vetor[min_indx], &vetor[i]);
+                count_trocas++;
+        }
+        return count_comparacoes;
+}
+int main() {
+
+	int vector[1023];
+	int copia_vector[1023];
+	printf("Se deseja encerrar o programa digite 0.\n");
+	printf("Caso contrário, digite 1 e o algoritmo criará um vetor e o ordenará: \n");
+	int entrada = 1;
+	while(entrada != 0) {
+		scanf("%d", &entrada);
+		cria_vector(vector, copia_vector);
+		printf("VETOR CRIADO, 100 PRIMEIROS ELEMENTOS: ");
+		imprime_parte(vector);
+		printf("\n");
+		selection_sort(vector, 1024);
+		printf("VETOR ORDENADO, 100 PRIMEIROS ELEMENTOS: ");
+		imprime_parte(vector);
+		printf("\n");
+		printf("NÚMERO DE COMPARAÇÕES: %d\n", count_comparacoes);
+		printf("NÚMERO DE TROCAS: %d\n", count_trocas);
+		count_comparacoes = 0;
+		count_trocas = 0;
+		printf("\n");
+	}
+}
+
+
+

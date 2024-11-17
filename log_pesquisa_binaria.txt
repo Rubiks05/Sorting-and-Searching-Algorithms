@@ -1,0 +1,58 @@
+Se deseja encerrar o programa digite 0.
+Caso contrário, digite 1 e o algoritmo criará um vetor e o ordenará: 
+1
+
+Número de Comparações feitas: 9
+Elemento 945 encontrado no índice 465 do vetor.
+
+1
+
+Número de Comparações feitas: 10
+Elemento 1080 encontrado no índice 548 do vetor.
+
+1
+
+Número de Comparações feitas: 10
+Elemento 26 encontrado no índice 10 do vetor.
+
+1
+
+Número de Comparações feitas: 10
+Elemento 47 não encontrado no vetor.
+
+1
+
+Número de Comparações feitas: 10
+Elemento 1423 não encontrado no vetor.
+
+1
+
+Número de Comparações feitas: 1
+Elemento 1004 encontrado no índice 511 do vetor.
+
+1
+
+Número de Comparações feitas: 10
+Elemento 1336 encontrado no índice 652 do vetor.
+
+1
+
+Número de Comparações feitas: 10
+Elemento 18 não encontrado no vetor.
+
+1
+
+Número de Comparações feitas: 8
+Elemento 1757 encontrado no índice 875 do vetor.
+
+1
+
+Número de Comparações feitas: 10
+Elemento 1054 não encontrado no vetor.
+
+1
+
+Número de Comparações feitas: 9
+Elemento 1512 encontrado no índice 761 do vetor.
+
+

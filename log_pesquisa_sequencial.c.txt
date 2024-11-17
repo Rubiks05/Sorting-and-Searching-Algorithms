@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int count_comparacoes = 0;
+int count_trocas = 0;
+
+long aleat (long min, long max) {
+
+        return min + rand() % (max - min + 1);
+
+}
+void cria_vector(int vector[], int copia_vector[]) {
+
+        for (int i=0 ; i<1024 ; i++) {
+                vector[i] = aleat(0,2048);
+                copia_vector[i] = vector[i];
+        }
+}
+int pesquisa_sequencial(int copia_vector[], int escolha_pesquisa, int tamanho, int entrada) {
+
+        if (escolha_pesquisa == 1 || escolha_pesquisa == 2) {
+                for (int i=0 ; i<tamanho ; i++) {
+                        if (copia_vector[i] == entrada) return i;
+                        count_comparacoes++;
+                }
+                // printf("Elemento %d não encontrado\n", entrada);
+                return -1;
+        }
+
+        else {
+                printf("Entrada não compreendida. Caso deseja fazer a pesquisa sequencial, aperte 6 novamente!\n");
+                return -1;
+        }
+}
+
+int main() {
+
+        int vector[1023];
+        int copia_vector[1023];
+        printf("Se deseja encerrar o programa digite 0.\n");
+        printf("Caso contrário, digite 1 e o algoritmo criará um vetor e o ordenará: \n");
+        int entrada = 1;
+        while(entrada != 0) {
+                scanf("%d", &entrada);
+                cria_vector(vector, copia_vector);
+		int entrada_s = aleat(0, 2048);
+                int pesquisa_s = pesquisa_sequencial(copia_vector, 2, 1024, entrada_s);
+                printf("\n");
+                printf("NÚMERO DE COMPARAÇÕES: %d\n", count_comparacoes);
+                if (pesquisa_s != -1) printf("Elemento %d encontrado no índice %d do vetor.\n", entrada_s, pesquisa_s);
+                else printf("Elemento %d não encontrado no vetor.\n", entrada_s);
+                count_comparacoes = 0;
+                printf("\n");
+        }
+}
+

@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+long aleat (long min, long max) {
+
+        return min + rand() % (max - min + 1);
+
+}
+void cria_vector(int vector[], int copia_vector[]) {
+
+        for (int i=0 ; i<1024 ; i++) {
+                vector[i] = aleat(0,2048);
+                copia_vector[i] = vector[i];
+        }
+}
+void imprime_parte(int vector[]) {
+
+        for (int i=0 ; i<100 ; i++) printf("%d ", vector[i]);
+        printf("\n");
+}
+
+int main() {
+	int entrada = 1;
+	printf("Se deseja encerar o programa, digite 0\n");
+	printf("Caso contrário, digite qualquer tecla e crie um vetor.\n");
+
+
+	while (entrada != 0){
+		scanf("%d", &entrada);
+                printf("\n");
+		int vector[1023];
+		int copia_vector[1023];
+		cria_vector(vector, copia_vector);
+		printf("OS 100 PRIMEIROS ELEMENTOS DO VETOR: ");
+		imprime_parte(vector);
+	}
+}

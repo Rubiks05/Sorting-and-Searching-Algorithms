@@ -1,0 +1,51 @@
+Se deseja encerrar o programa digite 0.
+Caso contrário, digite 1 e o algoritmo criará um vetor e o ordenará: 
+1
+
+NÚMERO DE COMPARAÇÕES: 218
+Elemento 945 encontrado no índice 218 do vetor.
+
+1
+
+NÚMERO DE COMPARAÇÕES: 101
+Elemento 1080 encontrado no índice 101 do vetor.
+
+1
+
+NÚMERO DE COMPARAÇÕES: 112
+Elemento 26 encontrado no índice 112 do vetor.
+
+1
+
+NÚMERO DE COMPARAÇÕES: 1024
+Elemento 47 não encontrado no vetor.
+
+1
+
+NÚMERO DE COMPARAÇÕES: 1024
+Elemento 1423 não encontrado no vetor.
+
+1
+
+NÚMERO DE COMPARAÇÕES: 445
+Elemento 1004 encontrado no índice 445 do vetor.
+
+1
+
+NÚMERO DE COMPARAÇÕES: 115
+Elemento 1336 encontrado no índice 115 do vetor.
+
+1
+
+NÚMERO DE COMPARAÇÕES: 1024
+Elemento 18 não encontrado no vetor.
+
+1
+
+NÚMERO DE COMPARAÇÕES: 80
+Elemento 1757 encontrado no índice 80 do vetor.
+
+1
+
+NÚMERO DE COMPARAÇÕES: 1024
+Elemento 1054 não encontrado no vetor.

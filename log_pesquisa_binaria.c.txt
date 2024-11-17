@@ -1,0 +1,117 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int count_comparacoes = 0;
+int count_trocas = 0;
+
+long aleat (long min, long max) {
+
+        return min + rand() % (max - min + 1);
+
+}
+void cria_vector(int vector[], int copia_vector[]) {
+
+        for (int i=0 ; i<1024 ; i++) {
+                vector[i] = aleat(0,2048);
+                copia_vector[i] = vector[i];
+        }
+}
+int pesquisa_binaria(int vector[], int escolha_pesquisa, int tamanho, int entrada) {
+        int inicio = 0;
+        int fim = tamanho-1;
+
+        while (inicio <= fim) {
+                int meio = inicio + (fim-inicio) / 2;
+                count_comparacoes++;
+
+                if (vector[meio] == entrada) return meio;
+
+                if (vector[meio] < entrada) inicio = meio+1;
+
+                else fim = meio-1;
+        }
+        return -1;
+}
+void troca(int *xp, int *yp) {
+
+        int temp = *xp;
+        *xp = *yp;
+        *yp = temp;
+}
+int mediano(int a, int b, int c) {
+        if ((a > b && a < c) || (a < b && a > c)) return a;
+        else if ((b > a && b < c) || (b < a && b > c)) return b;
+        else return c;
+}
+int particao(int vector[], int low, int high, int escolha_do_pivo) {
+
+        int pivo, pivo_index = high;
+
+        //Forma 1 de se escolher o pivô.
+        if (escolha_do_pivo == 1) pivo = vector[high];
+        // Forma 2 de se escolher o pivô.
+        else if (escolha_do_pivo == 2) {
+                int meio = low + (high - low) / 2;
+                pivo = mediano(vector[low], vector[meio], vector[high]);
+
+                // Encontrar o índice do pivô e movê-lo para a posição final.
+                if (pivo == vector[low]) pivo_index = low;
+                else if (pivo == vector[meio]) pivo_index = meio;
+                // Se o pivô já for o último, pivo_index = high.
+
+                // Mover o pivô para a posição final.
+                troca(&vector[pivo_index], &vector[high]);
+        }
+
+        int i = low - 1;
+
+        for (int j = low; j < high; j++) {
+                count_comparacoes++;
+                if (vector[j] <= pivo) {
+                        i++;
+                        troca(&vector[i], &vector[j]);
+                        count_trocas++;
+                }
+        }
+
+        troca(&vector[i + 1], &vector[high]);
+        count_trocas++;
+
+        // retorna o indice do vetor.
+        return i + 1;
+}
+void quick_sort(int vector[], int low, int high, int escolha_do_pivo) {
+
+        if (low < high) {
+                int pi = particao(vector, low, high, escolha_do_pivo);
+
+                quick_sort(vector, low, pi - 1, escolha_do_pivo);
+                quick_sort(vector, pi + 1, high, escolha_do_pivo);
+        }
+}
+
+int main() {
+
+        int vector[1023];
+        int copia_vector[1023];
+        printf("Se deseja encerrar o programa digite 0.\n");
+        printf("Caso contrário, digite 1 e o algoritmo criará um vetor e o ordenará: \n");
+        int entrada = 1;
+        while(entrada != 0) {
+                scanf("%d", &entrada);
+                cria_vector(vector, copia_vector);
+                int entrada_b = aleat(0, 2048);
+		//Ordenando o vetor para não dar ruim(pelo melhor método de ordenação).
+                quick_sort(vector, 0,1023,2);
+		//Zerando count_comparacoes que foi modificado na função do Quick Sort.
+                count_comparacoes = 0;
+                int pesquisa_b = pesquisa_binaria(vector, 2, 1024, entrada_b);
+                printf("\n");
+                printf("Número de Comparações feitas: %d\n", count_comparacoes);
+                if (pesquisa_b != -1) printf("Elemento %d encontrado no índice %d do vetor.\n", entrada_b, pesquisa_b);
+                else printf("Elemento %d não encontrado no vetor.\n", entrada_b);
+                count_comparacoes = 0;
+                printf("\n");
+        }
+}
+
