@@ -9,14 +9,6 @@ O trabalho foi desenvolvido segundo as especificações contidas no site do doce
 o aprendizado a respeito dos algoritmos de ordenação Selection Sort, Shell Sort e Quick Sort e dos algoritmos de pesquisa Sequencial e Binária,
 por meio das comparações e trocas que cada um dos algoritmos anteriormente mencionados faz.
 
-A entrega do trabalho foi pedida pelo professor da matéria Algoritmos e Estruturas de Dados 2 como um site, o qual deveria conter todo o código
-principal, logs dos códigos e relatório do projeto feitos pelo discente. Seguindo as especificações do trabalho exigidas pelo docente, esse site 
-foi feito na linguagem HTML. Ademais, o site foi feito por meio desse repositório, criando-se assim uma URL para ele por meio das configurações 
-contidas dentro do repositório no Git Hub, através do código contido no arquivo ***"index.html"*** na pasta ***"docs"*** (as imagens que aparecem
-no respectivo site estão contidas na pasta ***"Images"***).
-
-## [URL DO SITE FEITO PELO DISCENTE ANTONIO DA RESSURREIÇÃO FILHO](https://rubiks05.github.io/Sorting-and-Searching-Algorithms/)
-
 ***Arquivo "Relatório de ALG2.pdf":***
 
 Esse documento foi feito a partir das especificações do docente Dr. Elias P. Duarte Jr., o qual solicitou um relatório, em forma de diário, dos
@@ -54,13 +46,6 @@ os novos 100 primeiros elementos desse vetor [digitando 3]:
 The project was developed according to the specifications provided on the website of Professor Dr. Elias P. Duarte Jr. The primary objective of the project is to learn 
 about the sorting algorithms Selection Sort, Shell Sort, and Quick Sort, as well as the searching algorithms Sequential Search and Binary Search, by analyzing the comparisons 
 and swaps each algorithm performs.
-
-The project submission was requested by the professor of the course **Algorithms and Data Structures 2** in the form of a website, which should include all the main code, code 
-logs, and a project report created by the student. Following the specifications required by the professor, this website was built using the HTML language. Furthermore, the website 
-was created via this repository, generating a URL for it through the settings available within the repository on GitHub, using the code contained in the file ***"index.html"*** in 
-the ***"docs"*** folder (the images displayed on the respective site are located in the ***"Images"*** folder).
-
-## [WEBSITE URL CREATED BY THE STUDENT ANTONIO DA RESSURREIÇÃO FILHO](https://rubiks05.github.io/Sorting-and-Searching-Algorithms/)
 
 ***File "Relatório de ALG2.pdf":***
 
